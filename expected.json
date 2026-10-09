@@ -1,0 +1,604 @@
+[
+ {
+  "card": "powderGrams",
+  "args": [
+   5,
+   7,
+   2,
+   2
+  ],
+  "expect": {
+   "grams": 1.7,
+   "verdict": "a thimble"
+  }
+ },
+ {
+  "card": "powderGrams",
+  "args": [
+   10,
+   10,
+   2,
+   2
+  ],
+  "expect": {
+   "grams": 4.8,
+   "verdict": "a thimble"
+  }
+ },
+ {
+  "card": "powderGrams",
+  "args": [
+   10,
+   10,
+   3,
+   2
+  ],
+  "expect": {
+   "grams": 7.2,
+   "verdict": "a small vial"
+  }
+ },
+ {
+  "card": "powderGrams",
+  "args": [
+   20,
+   20,
+   2,
+   2
+  ],
+  "expect": {
+   "grams": 19.2,
+   "verdict": "a small vial"
+  }
+ },
+ {
+  "card": "powderGrams",
+  "args": [
+   20,
+   20,
+   3,
+   2
+  ],
+  "expect": {
+   "grams": 28.8,
+   "verdict": "a small vial"
+  }
+ },
+ {
+  "card": "powderGrams",
+  "args": [
+   30,
+   20,
+   2,
+   2
+  ],
+  "expect": {
+   "grams": 28.8,
+   "verdict": "a small vial"
+  }
+ },
+ {
+  "card": "powderGrams",
+  "args": [
+   30,
+   30,
+   3,
+   2
+  ],
+  "expect": {
+   "grams": 64.8,
+   "verdict": "a jar"
+  }
+ },
+ {
+  "card": "powderGrams",
+  "args": [
+   40,
+   40,
+   2,
+   2
+  ],
+  "expect": {
+   "grams": 76.8,
+   "verdict": "a jar"
+  }
+ },
+ {
+  "card": "powderGrams",
+  "args": [
+   50,
+   50,
+   3,
+   2
+  ],
+  "expect": {
+   "grams": 180.0,
+   "verdict": "stock up"
+  }
+ },
+ {
+  "card": "powderGrams",
+  "args": [
+   15,
+   15,
+   1,
+   1
+  ],
+  "expect": {
+   "grams": 2.7,
+   "verdict": "a thimble"
+  }
+ },
+ {
+  "card": "powderGrams",
+  "args": [
+   25,
+   35,
+   2,
+   2
+  ],
+  "expect": {
+   "grams": 42.0,
+   "verdict": "a jar"
+  }
+ },
+ {
+  "card": "powderGrams",
+  "args": [
+   5,
+   7,
+   6,
+   2
+  ],
+  "expect": {
+   "grams": 5.0,
+   "verdict": "a small vial"
+  }
+ },
+ {
+  "card": "powderGrams",
+  "args": [
+   0,
+   7,
+   2,
+   2
+  ],
+  "error": "positive"
+ },
+ {
+  "card": "powderGrams",
+  "args": [
+   5,
+   7,
+   0,
+   2
+  ],
+  "error": "coats"
+ },
+ {
+  "card": "powderGrams",
+  "args": [
+   5,
+   7,
+   7,
+   2
+  ],
+  "error": "coats"
+ },
+ {
+  "card": "powderGrams",
+  "args": [
+   5,
+   7,
+   2,
+   3
+  ],
+  "error": "sides"
+ },
+ {
+  "card": "copperGrams",
+  "args": [
+   5,
+   0.9
+  ],
+  "expect": {
+   "grams": 15.8,
+   "verdict": "workable"
+  }
+ },
+ {
+  "card": "copperGrams",
+  "args": [
+   3,
+   0.5
+  ],
+  "expect": {
+   "grams": 3.2,
+   "verdict": "feather"
+  }
+ },
+ {
+  "card": "copperGrams",
+  "args": [
+   2,
+   0.5
+  ],
+  "expect": {
+   "grams": 1.4,
+   "verdict": "feather"
+  }
+ },
+ {
+  "card": "copperGrams",
+  "args": [
+   10,
+   1.2
+  ],
+  "expect": {
+   "grams": 84.4,
+   "verdict": "hefty"
+  }
+ },
+ {
+  "card": "copperGrams",
+  "args": [
+   8,
+   0.9
+  ],
+  "expect": {
+   "grams": 40.5,
+   "verdict": "workable"
+  }
+ },
+ {
+  "card": "copperGrams",
+  "args": [
+   6,
+   1.6
+  ],
+  "expect": {
+   "grams": 40.5,
+   "verdict": "workable"
+  }
+ },
+ {
+  "card": "copperGrams",
+  "args": [
+   12,
+   2.0
+  ],
+  "expect": {
+   "grams": 202.7,
+   "verdict": "hefty"
+  }
+ },
+ {
+  "card": "copperGrams",
+  "args": [
+   4,
+   0.3
+  ],
+  "expect": {
+   "grams": 3.4,
+   "verdict": "feather"
+  }
+ },
+ {
+  "card": "copperGrams",
+  "args": [
+   7,
+   1.0
+  ],
+  "expect": {
+   "grams": 34.5,
+   "verdict": "workable"
+  }
+ },
+ {
+  "card": "copperGrams",
+  "args": [
+   15,
+   0.8
+  ],
+  "expect": {
+   "grams": 126.7,
+   "verdict": "hefty"
+  }
+ },
+ {
+  "card": "copperGrams",
+  "args": [
+   2.5,
+   0.9
+  ],
+  "expect": {
+   "grams": 4.0,
+   "verdict": "feather"
+  }
+ },
+ {
+  "card": "copperGrams",
+  "args": [
+   9,
+   2.5
+  ],
+  "expect": {
+   "grams": 142.5,
+   "verdict": "hefty"
+  }
+ },
+ {
+  "card": "copperGrams",
+  "args": [
+   0,
+   0.9
+  ],
+  "error": "positive"
+ },
+ {
+  "card": "copperGrams",
+  "args": [
+   5,
+   0
+  ],
+  "error": "positive"
+ },
+ {
+  "card": "copperGrams",
+  "args": [
+   -2,
+   0.9
+  ],
+  "error": "positive"
+ },
+ {
+  "card": "copperGrams",
+  "args": [
+   5,
+   -0.9
+  ],
+  "error": "positive"
+ },
+ {
+  "card": "kilnBatch",
+  "args": [
+   30,
+   30,
+   5,
+   7,
+   20,
+   30
+  ],
+  "expect": {
+   "per_batch": 24,
+   "batches": 1,
+   "minutes": 30,
+   "verdict": "one firing"
+  }
+ },
+ {
+  "card": "kilnBatch",
+  "args": [
+   30,
+   30,
+   5,
+   7,
+   50,
+   30
+  ],
+  "expect": {
+   "per_batch": 24,
+   "batches": 3,
+   "minutes": 90,
+   "verdict": "a morning"
+  }
+ },
+ {
+  "card": "kilnBatch",
+  "args": [
+   30,
+   30,
+   5,
+   7,
+   100,
+   30
+  ],
+  "expect": {
+   "per_batch": 24,
+   "batches": 5,
+   "minutes": 150,
+   "verdict": "a full day"
+  }
+ },
+ {
+  "card": "kilnBatch",
+  "args": [
+   40,
+   30,
+   8,
+   10,
+   12,
+   25
+  ],
+  "expect": {
+   "per_batch": 15,
+   "batches": 1,
+   "minutes": 25,
+   "verdict": "one firing"
+  }
+ },
+ {
+  "card": "kilnBatch",
+  "args": [
+   40,
+   30,
+   8,
+   10,
+   30,
+   25
+  ],
+  "expect": {
+   "per_batch": 15,
+   "batches": 2,
+   "minutes": 50,
+   "verdict": "a morning"
+  }
+ },
+ {
+  "card": "kilnBatch",
+  "args": [
+   20,
+   20,
+   6,
+   6,
+   10,
+   30
+  ],
+  "expect": {
+   "per_batch": 9,
+   "batches": 2,
+   "minutes": 60,
+   "verdict": "a morning"
+  }
+ },
+ {
+  "card": "kilnBatch",
+  "args": [
+   20,
+   20,
+   6,
+   6,
+   9,
+   30
+  ],
+  "expect": {
+   "per_batch": 9,
+   "batches": 1,
+   "minutes": 30,
+   "verdict": "one firing"
+  }
+ },
+ {
+  "card": "kilnBatch",
+  "args": [
+   20,
+   20,
+   6,
+   6,
+   28,
+   30
+  ],
+  "expect": {
+   "per_batch": 9,
+   "batches": 4,
+   "minutes": 120,
+   "verdict": "a full day"
+  }
+ },
+ {
+  "card": "kilnBatch",
+  "args": [
+   25,
+   35,
+   5,
+   7,
+   20,
+   30
+  ],
+  "expect": {
+   "per_batch": 25,
+   "batches": 1,
+   "minutes": 30,
+   "verdict": "one firing"
+  }
+ },
+ {
+  "card": "kilnBatch",
+  "args": [
+   15,
+   15,
+   5,
+   5,
+   18,
+   40
+  ],
+  "expect": {
+   "per_batch": 9,
+   "batches": 2,
+   "minutes": 80,
+   "verdict": "a morning"
+  }
+ },
+ {
+  "card": "kilnBatch",
+  "args": [
+   30,
+   30,
+   40,
+   40,
+   1,
+   30
+  ],
+  "error": "bigger than the shelf"
+ },
+ {
+  "card": "kilnBatch",
+  "args": [
+   30,
+   30,
+   35,
+   10,
+   2,
+   30
+  ],
+  "error": "bigger than the shelf"
+ },
+ {
+  "card": "kilnBatch",
+  "args": [
+   0,
+   30,
+   5,
+   7,
+   20,
+   30
+  ],
+  "error": "positive"
+ },
+ {
+  "card": "kilnBatch",
+  "args": [
+   30,
+   30,
+   5,
+   7,
+   0,
+   30
+  ],
+  "error": "at least 1"
+ },
+ {
+  "card": "kilnBatch",
+  "args": [
+   30,
+   30,
+   5,
+   7,
+   20,
+   0
+  ],
+  "error": "positive"
+ },
+ {
+  "card": "kilnBatch",
+  "args": [
+   30,
+   30,
+   5,
+   7,
+   2.5,
+   30
+  ],
+  "error": "whole"
+ }
+]
