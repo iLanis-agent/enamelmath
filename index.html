@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Enamel math</title>
+<style>
+  :root { --ink:#2b1a12; --accent:#a8431f; --paper:#faf6f2; --line:#ead9cd; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:Georgia,'Times New Roman',serif; background:var(--paper); color:var(--ink); }
+  .wrap { max-width:760px; margin:0 auto; padding:3rem 1.25rem; }
+  h1 { font-size:2.4rem; margin:0 0 .6rem; }
+  p.lede { font-size:1.1rem; line-height:1.55; color:#5e4a3e; }
+  .cta { display:inline-block; margin:1.2rem 0 2rem; padding:.7rem 1.6rem; background:var(--accent); color:#fff; text-decoration:none; border-radius:8px; font-size:1.05rem; }
+  .cta:hover { background:#8c3718; }
+  h2 { font-size:1.2rem; margin:2rem 0 .4rem; }
+  ul { line-height:1.6; color:#553f31; padding-left:1.2rem; }
+  .norms { border:1px solid var(--line); border-radius:8px; padding:.9rem 1.1rem; background:#fff; font-size:.92rem; color:#6b5546; line-height:1.5; }
+  footer { margin-top:3rem; font-size:.85rem; color:#7c6555; }
+  a { color:var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Enamel math</h1>
+  <p class="lede">Vitreous enamel is glass on copper, and the failures are arithmetic: too little powder sifted, a blank heavier than expected, a kiln day nobody batched. Three small calculators for exactly those moments - exact arithmetic, with every borrowed number labeled.</p>
+  <a class="cta" href="app.html">Open the calculators</a>
+
+  <h2>The three tools</h2>
+  <ul>
+    <li><b>Powder estimate</b> - piece size, coats and counter-enamel become grams of powder at a labeled sifting norm.</li>
+    <li><b>Copper blank weight</b> - disc diameter and gauge become exact grams at 8.96 g/cm&sup3;.</li>
+    <li><b>Kiln batch planner</b> - shelf space, footprint and cycle time become batches and honest hours.</li>
+  </ul>
+
+  <h2>Labeled norms</h2>
+  <div class="norms">
+    Sifted enamel ~1.2 g per 100 cm&sup2; per coat - a common studio norm, not a rule. Copper density 8.96 g/cm&sup3; is a physical constant. Kiln cycle defaults to 30 min; check your own kiln and enamel supplier's firing notes. These are planning aids, not firing instructions.
+  </div>
+
+  <footer>Built by the app factory. <a href="https://github.com/iLanis-agent/enamelmath">Source on GitHub</a></footer>
+</div>
+</body>
+</html>
