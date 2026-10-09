@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Enamel math - powder, copper and kiln batches</title>
+<style>
+  :root { --ink:#2b1a12; --accent:#a8431f; --paper:#faf6f2; --card:#ffffff; --line:#ead9cd; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: Georgia, 'Times New Roman', serif; background:var(--paper); color:var(--ink); }
+  header { padding:2rem 1.25rem 1rem; max-width:960px; margin:0 auto; }
+  h1 { font-size:1.9rem; margin:0 0 .35rem; }
+  header p { margin:.25rem 0; color:#5e4a3e; max-width:46rem; line-height:1.45; }
+  .norms { font-size:.9rem; color:#6b5546; margin-top:.6rem; }
+  main { max-width:960px; margin:0 auto; padding:0 1.25rem 3rem; display:grid; gap:1.25rem; }
+  @media (min-width:820px){ main { grid-template-columns:1fr 1fr 1fr; } }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:1.1rem 1.1rem 1.25rem; }
+  .card h2 { font-size:1.15rem; margin:.1rem 0 .5rem; }
+  .card p.desc { font-size:.9rem; color:#6b5546; margin:.2rem 0 .8rem; line-height:1.4; }
+  label { display:block; font-size:.85rem; margin:.55rem 0 .15rem; color:#553f31; }
+  input { width:100%; padding:.45rem .5rem; font-size:1rem; border:1px solid var(--line); border-radius:6px; font-family:inherit; }
+  button { margin-top:.8rem; width:100%; padding:.55rem; font-size:1rem; font-family:inherit; background:var(--accent); color:#fff; border:0; border-radius:6px; cursor:pointer; }
+  button:hover { background:#8c3718; }
+  .out { margin-top:.9rem; font-size:.95rem; line-height:1.5; min-height:3.2rem; }
+  .out .big { font-size:1.35rem; font-weight:bold; }
+  .band { display:inline-block; margin-top:.35rem; padding:.15rem .55rem; border-radius:999px; background:#f7e3d8; color:#8c3718; font-size:.82rem; }
+  .err { color:#a02323; }
+  footer { max-width:960px; margin:0 auto; padding:0 1.25rem 2.5rem; font-size:.85rem; color:#7c6555; }
+  a { color:var(--accent); }
+</style>
+</head>
+<body>
+<header>
+  <h1>Enamel math</h1>
+  <p>Vitreous enamel is glass on copper, and the failures are arithmetic: too little powder sifted, a blank heavier than expected, a kiln day nobody batched. Three small calculators for exactly those moments - exact arithmetic, every borrowed number labeled.</p>
+  <p class="norms">Labeled norms: sifted enamel ~1.2 g per 100 cm&sup2; per coat. Copper density 8.96 g/cm&sup3; (a physical constant). Kiln cycle 30 min by default - check your own kiln.</p>
+</header>
+<main>
+  <section class="card" id="powder">
+    <h2>Powder estimate</h2>
+    <p class="desc">How much enamel powder a piece drinks, coats and counter-enamel included.</p>
+    <label for="p-w">Piece width (cm)</label>
+    <input id="p-w" type="number" step="0.1" min="0" value="5">
+    <label for="p-h">Piece height (cm)</label>
+    <input id="p-h" type="number" step="0.1" min="0" value="7">
+    <label for="p-c">Coats per side</label>
+    <input id="p-c" type="number" step="1" min="1" max="6" value="2">
+    <label for="p-s">Sides enameled (1 or 2)</label>
+    <input id="p-s" type="number" step="1" min="1" max="2" value="2">
+    <button id="p-go">Sift the powder</button>
+    <div class="out" id="p-out"></div>
+  </section>
+
+  <section class="card" id="copper">
+    <h2>Copper blank weight</h2>
+    <p class="desc">What a disc weighs before you cut a hundred of them - exact at 8.96 g/cm&sup3;.</p>
+    <label for="c-d">Disc diameter (cm)</label>
+    <input id="c-d" type="number" step="0.1" min="0" value="5">
+    <label for="c-t">Thickness (mm)</label>
+    <input id="c-t" type="number" step="0.1" min="0" value="0.9">
+    <button id="c-go">Weigh the blank</button>
+    <div class="out" id="c-out"></div>
+  </section>
+
+  <section class="card" id="kiln">
+    <h2>Kiln batch planner</h2>
+    <p class="desc">Shelf space, piece footprint and cycle time become batches and honest hours.</p>
+    <label for="k-w">Shelf width (cm)</label>
+    <input id="k-w" type="number" step="0.5" min="0" value="30">
+    <label for="k-d">Shelf depth (cm)</label>
+    <input id="k-d" type="number" step="0.5" min="0" value="30">
+    <label for="k-pw">Piece width (cm)</label>
+    <input id="k-pw" type="number" step="0.5" min="0" value="5">
+    <label for="k-pd">Piece depth (cm)</label>
+    <input id="k-pd" type="number" step="0.5" min="0" value="7">
+    <label for="k-n">Pieces to fire</label>
+    <input id="k-n" type="number" step="1" min="1" value="20">
+    <label for="k-m">Minutes per cycle</label>
+    <input id="k-m" type="number" step="1" min="1" value="30">
+    <button id="k-go">Batch the kiln</button>
+    <div class="out" id="k-out"></div>
+  </section>
+</main>
+<footer>
+  Built by the app factory. <a href="index.html">About</a> &middot; <a href="https://github.com/iLanis-agent/enamelmath">Source</a>
+</footer>
+<script src="engine.js"></script>
+<script>
+(function () {
+  'use strict';
+  var M = window.EnamelMath;
+  function $(id){ return document.getElementById(id); }
+  function num(id){ return parseFloat($(id).value); }
+  function show(el, html){ el.classList.remove('err'); el.innerHTML = html; }
+  function fail(el, msg){ el.classList.add('err'); el.textContent = msg; }
+
+  $('p-go').addEventListener('click', function () {
+    var out = $('p-out');
+    try {
+      var r = M.powderGrams(num('p-w'), num('p-h'), num('p-c'), num('p-s'));
+      show(out, '<span class="big">' + r.grams + ' g</span> of powder' +
+        '<br><span class="band">' + r.verdict + '</span>');
+    } catch (e) { fail(out, e.message); }
+  });
+
+  $('c-go').addEventListener('click', function () {
+    var out = $('c-out');
+    try {
+      var r = M.copperGrams(num('c-d'), num('c-t'));
+      show(out, '<span class="big">' + r.grams + ' g</span> per blank' +
+        '<br><span class="band">' + r.verdict + '</span>');
+    } catch (e) { fail(out, e.message); }
+  });
+
+  $('k-go').addEventListener('click', function () {
+    var out = $('k-out');
+    try {
+      var r = M.kilnBatch(num('k-w'), num('k-d'), num('k-pw'), num('k-pd'), num('k-n'), num('k-m'));
+      var h = Math.floor(r.minutes / 60), m = r.minutes % 60;
+      show(out, '<span class="big">' + r.batches + (r.batches > 1 ? ' batches' : ' batch') + '</span> of ' + r.per_batch + ' pieces' +
+        '<br>' + (h > 0 ? h + ' h ' + (m ? m + ' min' : '') : r.minutes + ' min') + ' of kiln time' +
+        '<br><span class="band">' + r.verdict + '</span>');
+    } catch (e) { fail(out, e.message); }
+  });
+})();
+</script>
+</body>
+</html>
